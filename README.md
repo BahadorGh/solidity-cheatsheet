@@ -167,7 +167,9 @@ constructor(uint _number) {
   - **Calldata**:
     - where all incoming function execution data is stored(including function arguments)
     - non-modifiable memory location(note: similar to memrory location, except it is not modifiable)
-  - **Stack** - a stack which is maintained by EVM(Etheereum Virtual Machine) for loading variables and intermediate values for working with Ethereum instruction set(the working set memory for the EVM). - max limit is 1024 levels, and exceeding this limit(by storing anything more than that), raises an exception.
+  - **Stack**
+    - a stack which is maintained by EVM(Etheereum Virtual Machine) for loading variables and intermediate values for working with Ethereum instruction set(the working set memory for the EVM).
+    - max limit is 1024 levels, and exceeding this limit(by storing anything more than that), raises an exception.
 
 > **Note**: data location of variable, is dependent on:
 
@@ -184,13 +186,14 @@ constructor(uint _number) {
 - Primarily for informing the calling application about the current state of the contract
 - Declared with 'event' keyword
 - Firing them with 'emit' keyword
-- Note: Events can be declared anonymous.
-- Note: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
+
 - Ex:
   ```
   event EventName(address sender,uint number);
   emit EventName(address(0), 10);
   ```
+- **Note**: Events can be declared anonymous.
+- **Note**: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
 
 ## Error Handling
 
@@ -200,7 +203,7 @@ constructor(uint _number) {
     if true => go to next line codes,
     if false => show a string message and revert to privious state
   - Refund remaining gas to the caller
-  - Note: Use require conditions, all at beginning the function.
+  - **Note**: Use require conditions, all at beginning the function.
   - Ex: `require(number >= 10, "number must be greater than 10");`
 
 - 1.  Revert
