@@ -103,12 +103,13 @@ Creating the smart contract:
 
 2. **Functions**:
 
-- `public`
-- `private`
-- `internal`
-- `external`
-- Ex:
-  `function setNumber() public {}`
+   - `public`
+   - `private`
+   - `internal`
+   - `external`
+
+   - Ex:
+     `function setNumber() public {}`
 
 ## Function types
 
