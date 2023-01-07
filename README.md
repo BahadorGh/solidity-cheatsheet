@@ -203,36 +203,36 @@ constructor(uint _number) {
 
 ## Error Handling
 
-- 1.  **Require**
+1.  **Require**
 
-  - Check a condition,
-    if true => go to next line codes,
-    if false => show a string message and revert to privious state
-  - Refund remaining gas to the caller
-  - **Note**: Use require conditions, all at beginning the function.
-  - Ex: `require(number >= 10, "number must be greater than 10");`
+    - Check a condition,
+      if true => go to next line codes,
+      if false => show a string message and revert to privious state
+    - Refund remaining gas to the caller
+    - **Note**: Use require conditions, all at beginning the function.
+    - Ex: `require(number >= 10, "number must be greater than 10");`
 
-- 1.  **Revert**
+2.  **Revert**
 
-  - Similar to require, but can have more complex conditions
-  - Refund remaining gas to the caller
+    - Similar to require, but can have more complex conditions
+    - Refund remaining gas to the caller
 
-  - Ex: `if(number <= 10) { revert("number must be greater than 10"); }`
+    - Ex: `if(number <= 10) { revert("number must be greater than 10"); }`
 
-- 1.  **Assert**
+3.  **Assert**
 
-  - Mainly used in writing contract tests
-  - Don't refund remaining gas to the caller
+    - Mainly used in writing contract tests
+    - Don't refund remaining gas to the caller
 
-  * Ex:
+    - Ex:
 
-  ```
-  uint number = 123;
-  function setNumber() {
-      // code
-      assert(number == 10);
-  }
-  ```
+    ```
+    uint number = 123;
+    function setNumber() {
+        // code
+        assert(number == 10);
+    }
+    ```
 
 ## Enum
 
