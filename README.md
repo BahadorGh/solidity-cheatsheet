@@ -45,22 +45,22 @@ Creating the smart contract:
 
 ## Data types
 
-    * 1) Value types:
-        - Value stored in smart contract storage slot
-            - `bool` : `true` or `false`
-            - int(Signed Integer) : `int8  | int16  | int32 | ... | int64  | int128  | int256(int)`
-            - uint(Unsigned Integer) : `uint8 | uint16 | uint32 | ... | uint64 | uint128 | uint256(uint)`
-            - `address` and `address payable` : Holds an Ethereum address(20 bytes)
-            - `bytes1(byte)`, `bytes2`, `bytes3`, ..., `bytes32`
-            - [enum](#enum)
+- 1. Value types:
+     - Value stored in smart contract storage slot
+       - `bool` : `true` or `false`
+       - int(Signed Integer) : `int8  | int16  | int32 | ... | int64  | int128  | int256(int)`
+       - uint(Unsigned Integer) : `uint8 | uint16 | uint32 | ... | uint64 | uint128 | uint256(uint)`
+       - `address` and `address payable` : Holds an Ethereum address(20 bytes)
+       - `bytes1(byte)`, `bytes2`, `bytes3`, ..., `bytes32`
+       - [enum](#enum)
 
-    * 2) Reference types:
-        - A reference to a stored value in smart contract storage slot will be set
-            - array
-            - `string`
-            - [mapping](#mapping)
-            - [struct](#struct)
-            - bytes
+- 2. Reference types:
+  - A reference to a stored value in smart contract storage slot will be set
+    - array
+    - `string`
+    - [mapping](#mapping)
+    - [struct](#struct)
+    - bytes
 
 ## Variable types
 
@@ -81,24 +81,26 @@ Creating the smart contract:
 
 ## Visibility scope
 
-    * 1) Variables:
-            - `public`
-            - `private`
-            - `internal`
+1.  Variables:
 
-            * Ex: `uint public number;`
+    - `public`
+    - `private`
+    - `internal`
+
+    * Ex: `uint public number;`
 
             - Note: visibility is just for state variables and not applicable on local variables
             - Note: default visibility of a state variable is(if we don't declare visibility scope) --> internal
             - Note: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
 
-    * 2) Functions:
-            - `public`
-            - `private`
-            - `internal`
-            - `external`
+- 2. Functions:
 
-        * Ex: `function setNumber() public {}`
+     - `public`
+     - `private`
+     - `internal`
+     - `external`
+
+     - Ex: `function setNumber() public {}`
 
 ## Function types
 
