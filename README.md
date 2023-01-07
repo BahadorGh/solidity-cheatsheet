@@ -64,19 +64,19 @@ Creating the smart contract:
 
 ## Variable types
 
-- 1.  State variables => Variables which
+- 1. State variables:
 
   - Get permanently stored on blockchain(smart contract storage)
   - Use most gas usage in smart contracts
   - Accessible on whole smart contract
 
-- 2.  Local variables => Variables which
+- 2. Local variables:
 
   - Not stored on blockchain
   - Use less gas in smart contracts
   - Are living and working just in function body
 
-- 3.  Global variables => Variables which
+- 3. Global variables:
   - Provide information about the blockchain
   - Can be used both as state variables and local variables
   - Mainly used to determine contract owner and checking time
@@ -154,8 +154,17 @@ constructor(uint _number) {
 
 ## Data locations
 
-- Each variable declared and used in a contract has a data location: - **Storage**: - global memory available to all functions within a contract. - oermanent storage that Ethereum stores on every node. - **Memory**: - local memroy available to every function within a contract. - short living in functions. - **Calldata**: - where all incoming function execution data is stored(including function arguments) - non-modifiable memory location(note: similar to memrory location, except it is not modifiable) - **Stack** - a stack which is maintained by EVM(Etheereum Virtual Machine) for loading variables and
-  intermediate values for working with Ethereum instruction set(the working set memory for the EVM). - max limit is 1024 levels, and exceeding this limit(by storing anything more than that), raises an exception.
+- Each variable declared and used in a contract has a data location:
+  - **Storage**:
+    - global memory available to all functions within a contract.
+    - permanent storage that Ethereum stores on every node.
+  - **Memory**:
+    - local memroy available to every function within a contract.
+    - short living in functions.
+  - **Calldata**:
+    - where all incoming function execution data is stored(including function arguments)
+    - non-modifiable memory location(note: similar to memrory location, except it is not modifiable)
+  - **Stack** - a stack which is maintained by EVM(Etheereum Virtual Machine) for loading variables and intermediate values for working with Ethereum instruction set(the working set memory for the EVM). - max limit is 1024 levels, and exceeding this limit(by storing anything more than that), raises an exception.
 
 > **Note**: data location of variable, is dependent on:
 
