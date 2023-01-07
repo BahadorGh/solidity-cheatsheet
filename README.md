@@ -81,19 +81,19 @@ Creating the smart contract:
 
 ## Visibility scope
 
-1.  Variables:
+1.  **Variables**:
 
     - `public`
     - `private`
     - `internal`
 
-    * Ex: `uint public number;`
+    - Ex: `uint public number;`
 
-            - Note: visibility is just for state variables and not applicable on local variables
-            - Note: default visibility of a state variable is(if we don't declare visibility scope) --> internal
-            - Note: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
+    - Note: visibility is just for state variables and not applicable on local variables
+    - Note: default visibility of a state variable is(if we don't declare visibility scope) --> internal
+    - Note: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
 
-- 2. Functions:
+- 2. **Functions**:
 
      - `public`
      - `private`
@@ -104,7 +104,7 @@ Creating the smart contract:
 
 ## Function types
 
-- 1.  Non-Payable => Functions which
+- 1.  **Non-Payable** => Functions which
 
       - Write on the blockchain
       - Are our default functions type
@@ -112,21 +112,21 @@ Creating the smart contract:
 
       * Ex: `function setNumber() public {}`
 
-- 2.  View => Functions which
+- 2.  **View** => Functions which
 
       - Are able to show us data
       - Read from blockchain
 
       * Ex: `function setNumber() public view {}`
 
-- 3.  Pure => Functions which
+- 3.  **Pure** => Functions which
 
       - Neither read nor write on blockchain
       - Just do a specific work for us (ex: making sum of 2 numbers and returning back the value)
 
       * Ex: `function setNumber() public pure {}`
 
-- 3.  Payable => Functions which
+- 3.  **Payable** => Functions which
 
       - Are able to accept Ether deposits on the smart contract
 
@@ -134,20 +134,20 @@ Creating the smart contract:
 
 ## Constructor
 
-    - Is optional
-    - Does not have a name
-    - Does not have visibility scope
-    - Executed during contract deployment
-    - Can take parameters while deploying
-    - Initializes smart contract state variables
-    - Will be at most 1 within each smart contract
-    - Can have payable attribute associatede with it
+- Is optional
+- Does not have a name
+- Does not have visibility scope
+- Executed during contract deployment
+- Can take parameters while deploying
+- Initializes smart contract state variables
+- Will be at most 1 within each smart contract
+- Can have payable attribute associatede with it
 
-        * Ex: `constructor(uint _number) { number = _number; }`
+* Ex: `constructor(uint _number) { number = _number; }`
 
 ## Data locations
 
-    * Each variable declared and used in a contract has a data location:
+    - Each variable declared and used in a contract has a data location:
         - Storage:
             - global memory available to all functions within a contract.
             - oermanent storage that Ethereum stores on every node.
@@ -169,18 +169,16 @@ Creating the smart contract:
 
 ## Events
 
-    - Used for logging(like other languages)
-    - Used to notify applications about changes in contracts
-    - can be used to "call" JavaScript callbacks in the user interface of a dapp
-    - Primarily for informing the calling application about the current state of the contract
-    - Declared with 'event' keyword
-    - Firing them with 'emit' keyword
-
-    - Note: Events can be declared anonymous.
-    - Note: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
-
-        * Ex: ```event EventName(address sender,uint number)
-        *     emit EventName(address(0), 10)```
+- Used for logging(like other languages)
+- Used to notify applications about changes in contracts
+- can be used to "call" JavaScript callbacks in the user interface of a dapp
+- Primarily for informing the calling application about the current state of the contract
+- Declared with 'event' keyword
+- Firing them with 'emit' keyword
+- Note: Events can be declared anonymous.
+- Note: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
+  - Ex: ```event EventName(address sender,uint number)
+  -     emit EventName(address(0), 10)```
 
 ## Error Handling
 
@@ -212,11 +210,9 @@ Creating the smart contract:
 
 ## Enum
 
-      * Ex:
-      ```
-      enum OrderStatus { pending, accepted, completed, rejected};
-        OrderStatus order = OrderStatus.accepted;
-        ```
+- Ex:
+  `  enum OrderStatus { pending, accepted, completed, rejected};
+OrderStatus order = OrderStatus.accepted;`
 
 ## Mapping
 
