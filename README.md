@@ -52,8 +52,10 @@ Creating the smart contract:
 
    - Value stored in smart contract storage slot
      - `bool` : `true` or `false`
-     - int(Signed Integer) : `int8  | int16  | int32 | ... | int64  | int128  | int256(int)`
-     - uint(Unsigned Integer) : `uint8 | uint16 | uint32 | ... | uint64 | uint128 | uint256(uint)`
+     - int(Signed Integer) :
+       `int8  | int16  | int32 | ... | int64  | int128  | int256(int)`
+     - uint(Unsigned Integer) :
+       `uint8 | uint16 | uint32 | ... | uint64 | uint128 | uint256(uint)`
      - `address` and `address payable` : Holds an Ethereum address(20 bytes)
      - `bytes1(byte)`, `bytes2`, `bytes3`, ..., `bytes32`
      - [enum](#enum)
