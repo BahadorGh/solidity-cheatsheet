@@ -68,22 +68,23 @@ Creating the smart contract:
 
 ## Variable types
 
-- 1. **State variables**:
+1. **State variables**:
 
-  - Get permanently stored on blockchain(smart contract storage)
-  - Use most gas usage in smart contracts
-  - Accessible on whole smart contract
+- Get permanently stored on blockchain(smart contract storage)
+- Use most gas usage in smart contracts
+- Accessible on whole smart contract
 
-- 2. **Local variables**:
+2. **Local variables**:
 
-  - Not stored on blockchain
-  - Use less gas in smart contracts
-  - Are living and working just in function body
+- Not stored on blockchain
+- Use less gas in smart contracts
+- Are living and working just in function body
 
-- 3. **Global variables**:
-  - Provide information about the blockchain
-  - Can be used both as state variables and local variables
-  - Mainly used to determine contract owner and checking time
+3. **Global variables**:
+
+- Provide information about the blockchain
+- Can be used both as state variables and local variables
+- Mainly used to determine contract owner and checking time
 
 ## Visibility scope
 
