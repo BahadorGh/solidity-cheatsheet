@@ -59,13 +59,12 @@ Creating the smart contract:
      - [enum](#enum)
 
 2. Reference types:
-
-- A reference to a stored value in smart contract storage slot will be set
-  - array
-  - `string`
-  - [mapping](#mapping)
-  - [struct](#struct)
-  - bytes
+   - A reference to a stored value in smart contract storage slot will be set
+     - array
+     - `string`
+     - [mapping](#mapping)
+     - [struct](#struct)
+     - bytes
 
 ## Variable types
 
