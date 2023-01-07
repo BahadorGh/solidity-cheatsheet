@@ -101,14 +101,14 @@ Creating the smart contract:
 
 > **Note**: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable.
 
-- 2. **Functions**:
+2. **Functions**:
 
-  - `public`
-  - `private`
-  - `internal`
-  - `external`
-  - Ex:
-    `function setNumber() public {}`
+- `public`
+- `private`
+- `internal`
+- `external`
+- Ex:
+  `function setNumber() public {}`
 
 ## Function types
 
