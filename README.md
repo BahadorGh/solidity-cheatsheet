@@ -6,7 +6,7 @@ This document is a cheatsheet for **Solidity** that you can use to write **Smart
 
 This guide is not intended to teach you Solidity from the ground up, but to help developers with basic knowledge who may struggle to get familiar with Smart Contracts and Blockchain because of the Solidity concepts used.
 
-> **Note:** If you have basic knowledge in JavaScript, it's easier to learn Solidity.
+> **Note**: If you have basic knowledge in JavaScript, it's easier to learn Solidity.
 
 ## Table of contents
 
@@ -26,22 +26,25 @@ This guide is not intended to teach you Solidity from the ground up, but to help
 
 `// SPDX-License-Identifier: MIT`
 
-> **Note:** List of allowed SPDX licenses to use => https://spdx.org/licenses/
+> **Note**: List of allowed SPDX licenses to use => https://spdx.org/licenses/
 
 ## Compiler version
 
-Defining solidity compiler(solc) version for compiling the smart contract => - Some possible ways to use: - compiler version set exactly on 0.8.0 version => `pragma solidity 0.8.0;`
+Defining solidity compiler(solc) version for compiling the smart contract =>
 
-- compiler version set above 0.8.0 version and lower than 0.9.0 version => `pragma solidity ^0.8.0;`
-- compiler version set equal or above 0.7.0 version and lower than 0.9.0 version => `pragma solidity >= 0.7.0 < 0.9.0;`
+- Some possible ways to use:
+  - compiler version set exactly on 0.8.0 version => `pragma solidity 0.8.0;`
+  - compiler version set above 0.8.0 version and lower than 0.9.0 version => `pragma solidity ^0.8.0;`
+  - compiler version set equal or above 0.7.0 version and lower than 0.9.0 version => `pragma solidity >= 0.7.0 < 0.9.0;`
 
 ## Contract definition
 
 Creating the smart contract:
 `contract ContractName {}`
 
-> **Note:** Contracts are like classes in other programming languages
-> **Note:** Naming convention is like this for declaring contract: MyContract
+> **Note**: Contracts are like classes in other programming languages
+
+> **Note**: Naming convention is like this for declaring contract: MyContract
 
 ## Data types
 
@@ -91,9 +94,9 @@ Creating the smart contract:
 
     - Ex: `uint public number;`
 
-> **Note:** visibility is just for state variables and not applicable on local variables
-> **Note:** default visibility of a state variable is(if we don't declare visibility scope) --> internal
-> **Note:** if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
+> **Note**: visibility is just for state variables and not applicable on local variables
+> **Note**: default visibility of a state variable is(if we don't declare visibility scope) --> internal
+> **Note**: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
 
 - 2. **Functions**:
 
