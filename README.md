@@ -67,19 +67,20 @@ Creating the smart contract:
 
 ## Variable types
 
-- 1. State variables:
+- 1. **State variables**:
 
   - Get permanently stored on blockchain(smart contract storage)
   - Use most gas usage in smart contracts
   - Accessible on whole smart contract
 
-- 2. Local variables:
+- 2. **Local variables**:
 
   - Not stored on blockchain
   - Use less gas in smart contracts
   - Are living and working just in function body
 
-- 3. Global variables:
+- 3. **Global variables**:
+
   - Provide information about the blockchain
   - Can be used both as state variables and local variables
   - Mainly used to determine contract owner and checking time
@@ -94,9 +95,11 @@ Creating the smart contract:
 
     - Ex: `uint public number;`
 
-> **Note**: visibility is just for state variables and not applicable on local variables
-> **Note**: default visibility of a state variable is(if we don't declare visibility scope) --> internal
-> **Note**: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
+> **Note**: visibility is just for state variables and not applicable on local variables.
+
+> **Note**: default visibility of a state variable is(if we don't declare visibility scope) --> internal.
+
+> **Note**: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable.
 
 - 2. **Functions**:
 
@@ -104,37 +107,38 @@ Creating the smart contract:
   - `private`
   - `internal`
   - `external`
-  - Ex: `function setNumber() public {}`
+  - Ex:
+    `function setNumber() public {}`
 
 ## Function types
 
-- 1.  **Non-Payable** => Functions which
+- 1.  **Non-Payable**
 
   - Write on the blockchain
   - Are our default functions type
   - Are not able to accept deposits on the smart contract
 
-  * Ex: `function setNumber() public {}`
+  - Ex: `function setNumber() public {}`
 
-- 2.  **View** => Functions which
+- 2.  **View**
 
   - Are able to show us data
   - Read from blockchain
 
-  * Ex: `function setNumber() public view {}`
+  - Ex: `function setNumber() public view {}`
 
-- 3.  **Pure** => Functions which
+- 3.  **Pure**
 
   - Neither read nor write on blockchain
   - Just do a specific work for us (ex: making sum of 2 numbers and returning back the value)
 
-  * Ex: `function setNumber() public pure {}`
+  - Ex: `function setNumber() public pure {}`
 
-- 3.  **Payable** => Functions which
+- 3.  **Payable**
 
   - Are able to accept Ether deposits on the smart contract
 
-  * Ex: `function setNumber() public payable {}`
+  - Ex: `function setNumber() public payable {}`
 
 ## Constructor
 
@@ -151,8 +155,8 @@ Creating the smart contract:
 
 ```
 constructor(uint _number) {
-     number = _number;
-    }
+    number = _number;
+}
 ```
 
 ## Data locations
@@ -188,16 +192,18 @@ constructor(uint _number) {
 - Firing them with 'emit' keyword
 
 - Ex:
+
   ```
   event EventName(address sender,uint number);
   emit EventName(address(0), 10);
   ```
+
 - **Note**: Events can be declared anonymous.
 - **Note**: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
 
 ## Error Handling
 
-- 1.  Require
+- 1.  **Require**
 
   - Check a condition,
     if true => go to next line codes,
@@ -206,14 +212,14 @@ constructor(uint _number) {
   - **Note**: Use require conditions, all at beginning the function.
   - Ex: `require(number >= 10, "number must be greater than 10");`
 
-- 1.  Revert
+- 1.  **Revert**
 
   - Similar to require, but can have more complex conditions
   - Refund remaining gas to the caller
 
   - Ex: `if(number <= 10) { revert("number must be greater than 10"); }`
 
-- 1.  Assert
+- 1.  **Assert**
 
   - Mainly used in writing contract tests
   - Don't refund remaining gas to the caller
