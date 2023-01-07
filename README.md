@@ -113,33 +113,32 @@ Creating the smart contract:
 
 ## Function types
 
-- 1.  **Non-Payable**
+1.  **Non-Payable**
 
-  - Write on the blockchain
-  - Are our default functions type
-  - Are not able to accept deposits on the smart contract
+    - Write on the blockchain
+    - Are our default functions type
+    - Are not able to accept deposits on the smart contract
 
-  - Ex: `function setNumber() public {}`
+    - Ex: `function setNumber() public {}`
 
-- 2.  **View**
+2.  **View**
 
-  - Are able to show us data
-  - Read from blockchain
+    - Are able to show us data
+    - Read from blockchain
 
-  - Ex: `function setNumber() public view {}`
+    - Ex: `function setNumber() public view {}`
 
-- 3.  **Pure**
+3.  **Pure**
 
-  - Neither read nor write on blockchain
-  - Just do a specific work for us (ex: making sum of 2 numbers and returning back the value)
+    - Neither read nor write on blockchain
+    - Just do a specific work for us (ex: making sum of 2 numbers and returning back the value)
 
-  - Ex: `function setNumber() public pure {}`
+    - Ex: `function setNumber() public pure {}`
 
-- 3.  **Payable**
+4.  **Payable**
 
-  - Are able to accept Ether deposits on the smart contract
-
-  - Ex: `function setNumber() public payable {}`
+    - Are able to accept Ether deposits on the smart contract
+    - Ex: `function setNumber() public payable {}`
 
 ## Constructor
 
