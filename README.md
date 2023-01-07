@@ -65,19 +65,21 @@ Creating the smart contract:
 ## Variable types
 
 - 1.  State variables => Variables which
-      - Get permanently stored on blockchain(smart contract storage)
-      - Use most gas usage in smart contracts
-      - Accessible on whole smart contract
+
+  - Get permanently stored on blockchain(smart contract storage)
+  - Use most gas usage in smart contracts
+  - Accessible on whole smart contract
 
 - 2.  Local variables => Variables which
-      - Not stored on blockchain
-      - Use less gas in smart contracts
-      - Are living and working just in function body
+
+  - Not stored on blockchain
+  - Use less gas in smart contracts
+  - Are living and working just in function body
 
 - 3.  Global variables => Variables which
-      - Provide information about the blockchain
-      - Can be used both as state variables and local variables
-      - Mainly used to determine contract owner and checking time
+  - Provide information about the blockchain
+  - Can be used both as state variables and local variables
+  - Mainly used to determine contract owner and checking time
 
 ## Visibility scope
 
@@ -89,48 +91,47 @@ Creating the smart contract:
 
     - Ex: `uint public number;`
 
-    - Note: visibility is just for state variables and not applicable on local variables
-    - Note: default visibility of a state variable is(if we don't declare visibility scope) --> internal
-    - Note: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
+> **Note:** visibility is just for state variables and not applicable on local variables
+> **Note:** default visibility of a state variable is(if we don't declare visibility scope) --> internal
+> **Note:** if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable
 
 - 2. **Functions**:
 
-     - `public`
-     - `private`
-     - `internal`
-     - `external`
-
-     - Ex: `function setNumber() public {}`
+  - `public`
+  - `private`
+  - `internal`
+  - `external`
+  - Ex: `function setNumber() public {}`
 
 ## Function types
 
 - 1.  **Non-Payable** => Functions which
 
-      - Write on the blockchain
-      - Are our default functions type
-      - Are not able to accept deposits on the smart contract
+  - Write on the blockchain
+  - Are our default functions type
+  - Are not able to accept deposits on the smart contract
 
-      * Ex: `function setNumber() public {}`
+  * Ex: `function setNumber() public {}`
 
 - 2.  **View** => Functions which
 
-      - Are able to show us data
-      - Read from blockchain
+  - Are able to show us data
+  - Read from blockchain
 
-      * Ex: `function setNumber() public view {}`
+  * Ex: `function setNumber() public view {}`
 
 - 3.  **Pure** => Functions which
 
-      - Neither read nor write on blockchain
-      - Just do a specific work for us (ex: making sum of 2 numbers and returning back the value)
+  - Neither read nor write on blockchain
+  - Just do a specific work for us (ex: making sum of 2 numbers and returning back the value)
 
-      * Ex: `function setNumber() public pure {}`
+  * Ex: `function setNumber() public pure {}`
 
 - 3.  **Payable** => Functions which
 
-      - Are able to accept Ether deposits on the smart contract
+  - Are able to accept Ether deposits on the smart contract
 
-      * Ex: `function setNumber() public payable {}`
+  * Ex: `function setNumber() public payable {}`
 
 ## Constructor
 
@@ -143,29 +144,25 @@ Creating the smart contract:
 - Will be at most 1 within each smart contract
 - Can have payable attribute associatede with it
 
-* Ex: `constructor(uint _number) { number = _number; }`
+* Ex:
+
+```
+constructor(uint _number) {
+     number = _number;
+    }
+```
 
 ## Data locations
 
-    - Each variable declared and used in a contract has a data location:
-        - Storage:
-            - global memory available to all functions within a contract.
-            - oermanent storage that Ethereum stores on every node.
-        - Memory:
-            - local memroy available to every function within a contract.
-            - short living in functions.
-        - Calldata:
-            - where all incoming function execution data is stored(including function arguments)
-            - non-modifiable memory location(note: similar to memrory location, except it is not modifiable)
-        - Stack
-            - a stack which is maintained by EVM(Etheereum Virtual Machine) for loading variables and
-                intermediate values for working with Ethereum instruction set(the working set memory for the EVM).
-            - max limit is 1024 levels, and exceeding this limit(by storing anything more than that), raises an exception.
+- Each variable declared and used in a contract has a data location: - **Storage**: - global memory available to all functions within a contract. - oermanent storage that Ethereum stores on every node. - **Memory**: - local memroy available to every function within a contract. - short living in functions. - **Calldata**: - where all incoming function execution data is stored(including function arguments) - non-modifiable memory location(note: similar to memrory location, except it is not modifiable) - **Stack** - a stack which is maintained by EVM(Etheereum Virtual Machine) for loading variables and
+  intermediate values for working with Ethereum instruction set(the working set memory for the EVM). - max limit is 1024 levels, and exceeding this limit(by storing anything more than that), raises an exception.
 
-    - Note: data location of variable, is dependent on:
+> **Note**: data location of variable, is dependent on:
+
         - Location of the variable declaration
         - Data type of the variable
-    - Note: We face them mostly, when are working with reference type variables.
+
+> **Note**: We face them mostly, when are working with reference type variables.
 
 ## Events
 
@@ -177,42 +174,52 @@ Creating the smart contract:
 - Firing them with 'emit' keyword
 - Note: Events can be declared anonymous.
 - Note: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
-  - Ex: ```event EventName(address sender,uint number)
-  -     emit EventName(address(0), 10)```
+- Ex:
+  ```
+  event EventName(address sender,uint number);
+  emit EventName(address(0), 10);
+  ```
 
 ## Error Handling
 
 - 1.  Require
 
-      - Check a condition,
-        if true => go to next line codes,
-        if false => show a string message and revert to privious state
-      - Refund remaining gas to the caller
-
-      - Note: Use require conditions, all at beginning the function.
-
-        - Ex: `require(number >= 10, "number must be greater than 10");`
+  - Check a condition,
+    if true => go to next line codes,
+    if false => show a string message and revert to privious state
+  - Refund remaining gas to the caller
+  - Note: Use require conditions, all at beginning the function.
+  - Ex: `require(number >= 10, "number must be greater than 10");`
 
 - 1.  Revert
 
-      - Similar to require, but can have more complex conditions
-      - Refund remaining gas to the caller
+  - Similar to require, but can have more complex conditions
+  - Refund remaining gas to the caller
 
-        - Ex: `if(number <= 10) { revert("number must be greater than 10"); }`
+  - Ex: `if(number <= 10) { revert("number must be greater than 10"); }`
 
 - 1.  Assert
 
-      - Mainly used in writing contract tests
-      - Don't refund remaining gas to the caller
+  - Mainly used in writing contract tests
+  - Don't refund remaining gas to the caller
 
-      * Ex: ```uint number = 123;
-      * assert(number == 10);```
+  * Ex:
+
+  ```
+  uint number = 123;
+  function setNumber() {
+      // code
+      assert(number == 10);
+  }
+  ```
 
 ## Enum
 
 - Ex:
-  `  enum OrderStatus { pending, accepted, completed, rejected};
-OrderStatus order = OrderStatus.accepted;`
+  ```
+  enum OrderStatus { pending, accepted, completed, rejected};
+  OrderStatus order = OrderStatus.accepted;
+  ```
 
 ## Mapping
 
@@ -228,8 +235,9 @@ Mappings are like **Dictionary** or **hash table** which are virtually initializ
 
 Somehow we can pack some data types(and ofcourse data values) of an specific entity with structs:
 
-      * Ex:
-      ```
-      struct UserInfo { string fName; string lName; uint8 age; address wallet;}
-        UserInfo user;
-        ```
+- Ex:
+
+  ```
+  struct UserInfo { string fName; string lName; uint8 age; address wallet;}
+  UserInfo user;
+  ```
