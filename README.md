@@ -107,9 +107,9 @@ Creating the smart contract:
 
 > **Note**: visibility is just for state variables and not applicable on local variables.
 
-> **Note**: default visibility of a state variable is(if we don't declare visibility scope) --> internal.
+> **Note**: default visibility of a state variable --> **internal**.
 
-> **Note**: if declare a variable to have `public` scope, automatically a 'getter function' will be created for that variable.
+> **Note**: if declare a variable to have `public` scope, automatically a _getter function_ will be created for that variable.
 
 2. **Functions**:
 
