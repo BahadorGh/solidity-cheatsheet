@@ -14,13 +14,16 @@ This guide is not intended to teach you Solidity from the ground up, but to help
   (#solidity-cheatsheet)
   - [Licensing](#licensing-of-the-smart-contract)
   - [Compiler Version](#compiler-version)
-  - [Import]
+  - [Import](#import)
   - [Contract Definition](#contract-definition)
   - [Data types](#data-types)
   - [Variable types](#variable-types)
   - [Visibility scope](#visibility-scope)
+  - [Function definition](#function-definition)
   - [Function types](#function-types)
   - [Constructor](#constructor)
+  - [Constant-Immutable](#constant-immutable)
+  - [Error handling](#error-handling)
 
 ## Licensing of the smart contract
 
@@ -36,6 +39,12 @@ Defining solidity compiler(solc) version for compiling the smart contract =>
   - compiler version set exactly on 0.8.0 version => `pragma solidity 0.8.0;`
   - compiler version set above 0.8.0 version and lower than 0.9.0 version => `pragma solidity ^0.8.0;`
   - compiler version set equal or above 0.7.0 version and lower than 0.9.0 version => `pragma solidity >= 0.7.0 < 0.9.0;`
+
+## Import
+
+when we want to fetch another contract bytecode(low-level codes) into our smart contract, we use _import_ keyword.
+
+- Ex: `import "@openzeppelin/contracts/access/Ownable.sol"`
 
 ## Contract definition
 
@@ -112,6 +121,10 @@ Creating the smart contract:
 
    - Ex:
      `function setNumber() public {}`
+
+## Function definition
+
+`function functionName(parameteresList) scope non-payable|view|pure|payable modifierName returns() { } `
 
 ## Function types
 
@@ -272,6 +285,7 @@ bytes array is a **dynamically-sized array** that can hold _any number of bytes_
 ## String
 
 > **Note**: String is a dynamic data type which is based on bytes array.
+
 > **Note**: Strings can't be indexed or pushed and also don't have length property.
 
 - Ex: `string fullName = "Bahador Ghadamkheir";`
@@ -296,6 +310,12 @@ Somehow we can pack some data types(and ofcourse data values) of an specific ent
   struct UserInfo { string fName; string lName; uint8 age; address wallet;}
   UserInfo user;
   ```
+
+## Constant - Immutable
+
+State variables can be defined as constant(unchangable) values by getting declared as _constant_ or _immutable_.
+
+> **Difference**: _constant_ values must be initialized at the time of declaration, but _immutable_ values can both have values at declaration time and also get set in _constructor_ function
 
 ## Error Handling
 
