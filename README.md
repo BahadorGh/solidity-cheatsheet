@@ -160,38 +160,31 @@ Creating the smart contract:
 
 There is someways to get output from functions:
 
-    return multiple values |
-    --- |
-    ```
-    function myReturn() public pure returns(uint,address,bool,uint) {
+1- return multiple values:
+`    function myReturn() public pure returns(uint,address,bool,uint) {
         return (1,address(1), true, 2);
     }
-    ```
+   `
 
-    return values can be named |
-    --- |
-    ```
-    function returnByName() public pure returns(uint x, address y, bool z, uint p) {
+2- return values can be named:
+`    function returnByName() public pure returns(uint x, address y, bool z, uint p) {
         return (1,address(1), true, 2);
     }
-    ```
+   `
 
-    return values can be assigned to their name |
-    --- |
-    ```
-    function returnWithoutReturn() public pure returns (uint x, address y, bool z, uint p) {
+3- return values can be assigned to their name:
+`    function returnWithoutReturn() public pure returns (uint x, address y, bool z, uint p) {
         x = 1;
         y = address(1);
         z = true;
         p = 2;
     }
-    ```
+   `
 
-    destructuring assignment |
-    --- |
-    ```
-    function destructuring() public pure returns (uint,address,bool,uint,uint,uint) {
-        (uint i, address b, bool n, uint q) = myReturn();
+4- destructuring assignment:
+```
+function destructuring() public pure returns (uint,address,bool,uint,uint,uint) {
+(uint i, address b, bool n, uint q) = myReturn();
 
         (uint x, ,uint y,) = (10,20,30,40);
 
