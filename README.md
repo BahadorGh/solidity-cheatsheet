@@ -52,9 +52,9 @@ Creating the smart contract:
 
    - Value stored in smart contract storage slot
      - `bool` : `true` or `false`
-     - int(Signed Integer) :
+     - [int](#int)(Signed Integer) :
        `int8  | int16  | int32 | ... | int64  | int128  | int256(int)`
-     - uint(Unsigned Integer) :
+     - [uint](#uint)(Unsigned Integer) :
        `uint8 | uint16 | uint32 | ... | uint64 | uint128 | uint256(uint)`
      - `address` and `address payable` : Holds an Ethereum address(20 bytes)
      - `bytes1(byte)`, `bytes2`, `bytes3`, ..., `bytes32`
@@ -62,11 +62,11 @@ Creating the smart contract:
 
 2. Reference types:
    - A reference to a stored value in smart contract storage slot will be set
-     - array
-     - `string`
+     - [array](#array)
+     - [bytes](#bytes)
+     - [string](#string)
      - [mapping](#mapping)
      - [struct](#struct)
-     - bytes
 
 ## Variable types
 
@@ -203,6 +203,100 @@ constructor(uint _number) {
 - **Note**: Events can be declared anonymous.
 - **Note**: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
 
+## Int
+
+Number values which can be negative or positive:
+
+- `int8` => can accept values `>= -(2 ** 8)` and `<= +((2 ** 7) - 1)`
+- `int256` => can accept values `>= -(2 ** 256)` and `<= +((2 ** 255) - 1)`
+- `int256` <> `int`
+- default value = 0
+
+## UInt
+
+Number values which can be positive:
+
+- `uint8` => can accept values `>= 0` and `<= +((2 ** 8) - 1)`
+- `uint256` => can accept values `>= 0` and `<= +((2 ** 256) - 1)`
+- `uint256` <> `uint`
+- default value = 0
+
+## Enum
+
+- Ex:
+  ```
+  enum OrderStatus { pending, accepted, completed, rejected};
+  OrderStatus order = OrderStatus.accepted;
+  ```
+
+## Arrays
+
+1- Fixed arrays
+
+- arrays that have a pre-determined size at declaration time.
+- **can't be initialized using `new` keyword.**
+- Ex: `uint[3] numbers = [1,2,3];`
+
+2- Dynamic arrays
+
+- their size is determined at runtime.
+- arrays that don't have a pre-determined size at declaration time.
+- **can be initialized using `new` keyword.**
+- Ex: `uint[] numbers = [1,2,3,4,5,6,7,8,9];`
+
+### methods
+
+- _.push()_
+- _.pop()_
+
+### properties
+
+- _.index_
+- _.push_
+- _.length_
+
+> **Note**: There is two special arrays in Solidity: 1.bytes array 2. String array
+> **Note**: index property is applicable on all array types except _string type_.
+> **Note**: push property is supported just for dynamic arrays
+
+## bytes
+
+bytes array is a **dynamically-sized array** that can hold _any number of bytes_.
+
+> **Note**: bytes array is not the same as byte[] array.
+
+- Ex: `bytes fullName = "Bahador Ghadamkheir";`
+
+## String
+
+> **Note**: String is a dynamic data type which is based on bytes array.
+> **Note**: Strings can't be indexed or pushed and also don't have length property.
+
+- Ex: `string fullName = "Bahador Ghadamkheir";`
+
+## Mapping
+
+Declaration:
+`mapping(_KeyType => _ValueType) mappingName`
+
+Mappings are like **Dictionary** or **hash table** which are virtually initialized such that every possible key exists and is mapped to a specific value.
+
+**key** can be any type which EVM internally knows about it(exceptions are: a dynamically sized array, a contract, an enum, or a struct.
+**value** can actually be any type, including mappings.
+
+## Struct
+
+Somehow we can pack some data types(and ofcourse data values) of an specific entity with structs:
+
+- Ex:
+
+  ```
+  struct UserInfo { string fName; string lName; uint8 age; address wallet;}
+  UserInfo user;
+  ```
+
+## Bytes
+
 ## Error Handling
 
 1.  **Require**
@@ -235,32 +329,3 @@ constructor(uint _number) {
         assert(number == 10);
     }
     ```
-
-## Enum
-
-- Ex:
-  ```
-  enum OrderStatus { pending, accepted, completed, rejected};
-  OrderStatus order = OrderStatus.accepted;
-  ```
-
-## Mapping
-
-Declaration:
-`mapping(_KeyType => _ValueType) mappingName`
-
-Mappings are like **Dictionary** or **hash table** which are virtually initialized such that every possible key exists and is mapped to a specific value.
-
-**key** can be any type which EVM internally knows about it(exceptions are: a dynamically sized array, a contract, an enum, or a struct.
-**value** can actually be any type, including mappings.
-
-## Struct
-
-Somehow we can pack some data types(and ofcourse data values) of an specific entity with structs:
-
-- Ex:
-
-  ```
-  struct UserInfo { string fName; string lName; uint8 age; address wallet;}
-  UserInfo user;
-  ```
