@@ -10,21 +10,19 @@ This guide is not intended to teach you Solidity from the ground up, but to help
 
 ## 📚 Table of contents
 
-- [Solidity Cheatsheet and Best practices]
-  (#solidity-cheatsheet)
-  - [Licensing](#licensing-of-the-smart-contract)
-  - [Compiler Version](#compiler-version)
-  - [Import](#import)
-  - [Contract Definition](#contract-definition)
-  - [Data types](#data-types)
-  - [Variable types](#variable-types)
-  - [Visibility scope](#visibility-scope)
-  - [Function definition](#function-definition)
-  - [Function types](#function-types)
-  - [Function outputs](#function-outputs)
-  - [Constructor](#constructor)
-  - [Constant-Immutable](#constant-immutable)
-  - [Error handling](#error-handling)
+- [Licensing](#licensing-of-the-smart-contract)
+- [Compiler Version](#compiler-version)
+- [Import](#import)
+- [Contract Definition](#contract-definition)
+- [Data types](#data-types)
+- [Variable types](#variable-types)
+- [Visibility scope](#visibility-scope)
+- [Function definition](#function-definition)
+- [Function types](#function-types)
+- [Function outputs](#function-outputs)
+- [Constructor](#constructor)
+- [Constant-Immutable](#constant-immutable)
+- [Error handling](#error-handling)
 
 ## Licensing of the smart contract
 
