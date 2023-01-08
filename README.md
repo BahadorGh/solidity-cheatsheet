@@ -8,7 +8,7 @@ This guide is not intended to teach you Solidity from the ground up, but to help
 
 > **Note**: If you have basic knowledge in JavaScript, it's easier to learn Solidity.
 
-## Table of contents
+## 📚 Table of contents
 
 - [Solidity Cheatsheet and Best practices]
   (#solidity-cheatsheet)
@@ -247,8 +247,8 @@ constructor(uint _number) {
 - Used to notify applications about changes in contracts
 - can be used to "call" JavaScript callbacks in the user interface of a dapp
 - Primarily for informing the calling application about the current state of the contract
-- Declared with 'event' keyword
-- Firing them with 'emit' keyword
+- Declared with **event** keyword
+- Firing them with **emit** keyword
 
 - Ex:
 
@@ -257,8 +257,8 @@ constructor(uint _number) {
   emit EventName(address(0), 10);
   ```
 
-- **Note**: Events can be declared anonymous.
-- **Note**: Events can have 'indexed' keyword in variable declaration(to make easier filtering of some specific data)
+- **Note**: Events can be declared _anonymous_.
+- **Note**: Events can have _indexed_ keyword in variable declaration(to make easier filtering of some specific data)
 
 ## Int
 
@@ -406,3 +406,11 @@ constructor() {
         assert(number == 10);
     }
     ```
+
+## 🙌🏼 How to Contribute?
+
+You are more than welcome to contribute on Solidity cheat sheet. Just submit changes via pull request and I will review them before merging.
+
+## 👩‍💻👨‍💻 Our valuable Contributors
+
+Be in our contributers.
