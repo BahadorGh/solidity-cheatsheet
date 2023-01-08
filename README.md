@@ -21,6 +21,7 @@ This guide is not intended to teach you Solidity from the ground up, but to help
   - [Visibility scope](#visibility-scope)
   - [Function definition](#function-definition)
   - [Function types](#function-types)
+  - [Function outputs](#function-outputs)
   - [Constructor](#constructor)
   - [Constant-Immutable](#constant-immutable)
   - [Error handling](#error-handling)
@@ -154,6 +155,49 @@ Creating the smart contract:
 
     - Are able to accept Ether deposits on the smart contract
     - Ex: `function setNumber() public payable {}`
+
+## Function outputs
+
+There is someways to get output from functions:
+
+    return multiple values |
+    --- |
+    ```
+    function myReturn() public pure returns(uint,address,bool,uint) {
+        return (1,address(1), true, 2);
+    }
+    ```
+
+    return values can be named |
+    --- |
+    ```
+    function returnByName() public pure returns(uint x, address y, bool z, uint p) {
+        return (1,address(1), true, 2);
+    }
+    ```
+
+    return values can be assigned to their name |
+    --- |
+    ```
+    function returnWithoutReturn() public pure returns (uint x, address y, bool z, uint p) {
+        x = 1;
+        y = address(1);
+        z = true;
+        p = 2;
+    }
+    ```
+
+    destructuring assignment |
+    --- |
+    ```
+    function destructuring() public pure returns (uint,address,bool,uint,uint,uint) {
+        (uint i, address b, bool n, uint q) = myReturn();
+
+        (uint x, ,uint y,) = (10,20,30,40);
+
+        return (i,b,n,q,x,y);
+    }
+    ```
 
 ## Constructor
 
