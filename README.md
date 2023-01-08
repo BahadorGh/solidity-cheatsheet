@@ -317,6 +317,10 @@ State variables can be defined as constant(unchangable) values by getting declar
 
 > **Difference**: _constant_ values must be initialized at the time of declaration, but _immutable_ values can both have values at declaration time and also get set in _constructor_ function
 
+| constant                                       | immutable                                                                           |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------- |
+| must be initialized at the time of declaration | can both have values at declaration time and also get set in _constructor_ function |
+
 ## Error Handling
 
 1.  **Require**
