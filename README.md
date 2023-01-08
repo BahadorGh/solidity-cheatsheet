@@ -315,11 +315,20 @@ Somehow we can pack some data types(and ofcourse data values) of an specific ent
 
 State variables can be defined as constant(unchangable) values by getting declared as _constant_ or _immutable_.
 
-> **Difference**: _constant_ values must be initialized at the time of declaration, but _immutable_ values can both have values at declaration time and also get set in _constructor_ function
-
 | constant                                       | immutable                                                                           |
 | ---------------------------------------------- | ----------------------------------------------------------------------------------- |
 | must be initialized at the time of declaration | can both have values at declaration time and also get set in _constructor_ function |
+
+- Ex:
+
+```
+uint public const width = 10;
+uint public immutable height;
+
+constructor() {
+  height = 25;
+}
+```
 
 ## Error Handling
 
