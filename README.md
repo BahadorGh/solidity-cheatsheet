@@ -297,8 +297,6 @@ Somehow we can pack some data types(and ofcourse data values) of an specific ent
   UserInfo user;
   ```
 
-## Bytes
-
 ## Error Handling
 
 1.  **Require**
