@@ -255,8 +255,10 @@ Number values which can be positive:
 - _.push_
 - _.length_
 
-> **Note**: There is two special arrays in Solidity: 1.bytes array 2. String array
+> **Note**: There is two special arrays in Solidity: 1.bytes array 2. String array.
+
 > **Note**: index property is applicable on all array types except _string type_.
+
 > **Note**: push property is supported just for dynamic arrays
 
 ## bytes
